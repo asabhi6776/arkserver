@@ -55,7 +55,7 @@ RUN         set -x && \
             apt-get -qq autoclean && apt-get -qq autoremove && apt-get -qq clean && \
             rm -rf /tmp/* /var/cache/*
 
-RUN chmod 777 /app
+RUN         chmod 777 /app
 
 COPY        bin/    /
 COPY        conf.d  ${TEMPLATE_DIRECTORY}
