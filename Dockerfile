@@ -7,10 +7,10 @@ ENV         LANG="en_US.UTF-8" \
             LANGUAGE="en_US:en" \
             LC_ALL="en_US.UTF-8" \
             TERM="linux" \
-            SESSION_NAME="Dockerized ARK Server by github.com/hermsi1337" \
+            SESSION_NAME="Dockerized ARK Server by SniperXJohn" \
             SERVER_MAP="TheIsland" \
-            SERVER_PASSWORD="YouShallNotPass" \
-            ADMIN_PASSWORD="Th155houldD3f1n3tlyB3Chang3d" \
+            SERVER_PASSWORD="password" \
+            ADMIN_PASSWORD="password123" \
             MAX_PLAYERS="20" \
             GAME_MOD_IDS="" \
             UPDATE_ON_START="false" \
@@ -33,8 +33,9 @@ ENV         ARK_TOOLS_DIR="${ARK_SERVER_VOLUME}/arkmanager" \
             STEAM_HOME="/home/${STEAM_USER}"
 
 
-RUN         set -x && \
-            dpkg --add-architecture i386 && \
+RUN         set -x
+
+RUN         dpkg --add-architecture i386 && \
             apt-get -qq update && apt-get -qq upgrade && \
             apt-get -qq install libsdl2-2.0-0:i386 libcurl4 curl lib32gcc1 lsof perl-modules libc6-i386 bzip2 bash-completion locales sudo cron && \
             sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen && \
