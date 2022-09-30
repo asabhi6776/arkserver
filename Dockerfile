@@ -33,9 +33,9 @@ ENV         ARK_TOOLS_DIR="${ARK_SERVER_VOLUME}/arkmanager" \
             STEAM_HOME="/home/${STEAM_USER}"
 
 
-# RUN         set -x
+RUN         set -x
 
-RUN            dpkg --add-architecture i386 && \
+RUN         dpkg --add-architecture i386 && \
             apt-get -qq update && apt-get -qq upgrade && \
             apt-get -qq install libsdl2-2.0-0:i386 libcurl4 curl lib32gcc1 lsof perl-modules libc6-i386 bzip2 bash-completion locales sudo cron && \
             sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen && \
