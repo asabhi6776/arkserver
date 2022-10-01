@@ -8,8 +8,6 @@ This image always installs the latest version of ARK-Server currently avaialable
 Thus, the tags are reffering to the ARK-Server-Tools version which is used by the corresponding image.
 
 ## Usage
-### ⚠️ Windows / WSL Notice ⚠️
-**Mount the container volumes directly inside WSL's filesystem.** Mounting them inside a filesystem managed by Windows causes the installation to be painfully slow or even get stuck.
 
 ### Startup your ARK-Server
 #### Basic configuration
@@ -19,8 +17,8 @@ The basic configuration of your server is done by using environment variables wh
 |:-----------------:|:----------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------:|
 | SESSION_NAME | Dockerized ARK Server by github.com/hermsi1337 | The name of your ARK-session which is visible in game when searching for servers |
 | SERVER_MAP | TheIsland | Desired map you want to play |
-| SERVER_PASSWORD | YouShallNotPass | Server password which is required to join your session. (overwrite with empty string if you want to disable password authentication) |
-| ADMIN_PASSWORD | Th155houldD3f1n3tlyB3Chang3d | Admin-password in order to access the admin console of ARK |
+| SERVER_PASSWORD | SomePassword | Server password which is required to join your session. (overwrite with empty string if you want to disable password authentication) |
+| ADMIN_PASSWORD | GiveMeSomePassword | Admin-password in order to access the admin console of ARK |
 | MAX_PLAYERS | 20 | Maximum number of players to join your session |
 | UPDATE_ON_START | false | Whether you want to update the ARK-server upon startup or not |
 | BACKUP_ON_STOP | false | Create a backup before gracefully stopping the ARK-server |
@@ -120,3 +118,5 @@ Close file (`:wq`) and restart the container:
 ```bash
 $ docker restart ark_server
 ```
+
+# Credit: https://github.com/hermsi
