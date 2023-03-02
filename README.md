@@ -119,4 +119,4 @@ Close file (`:wq`) and restart the container:
 $ docker restart ark_server
 ```
 
-# Credit: https://github.com/hermsi
+# Credit: https://github.com/hermsi1337
